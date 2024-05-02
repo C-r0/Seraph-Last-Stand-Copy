@@ -34,7 +34,11 @@ public class MovPlayer : MonoBehaviour
         // Olhar Direita / Esquerda
         if (hspd > 0); // Verifica se a variavel hspd é maior que 0
         { 
-            
+            transform.localScale = fRight; // Vira o player para a direita
+        }
+        if (hspd > 0) ; // Verifica se a variavel hspd é menor que 0
+        {
+            transform.localScale = fLeft; // Vira o player para a esquerda 
         }
 
     }
