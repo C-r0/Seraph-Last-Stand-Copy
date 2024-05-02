@@ -1,30 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MovPlayer : MonoBehaviour
 {
-    // Variaveis
+    // Variaveis.
     public float spd; // Variavel spd (float, publica)
     private Vector3 fRight; // Variavel fRight (Vector3, privada)
     private Vector3 fLeft; // Variavel fLeft (Vector3, privada)
 
 
-    // Start is called before the first frame update
-    void Start()
+    void Start() // Executado ao iniciar o jogo
     {
-        fRight = transform.localScale; // Determina que o Vector3 é para escala
-        fLeft = transform.localScale; // Determina que o Vector3 é para escala
-        fLeft.x = fLeft.x * -1; // Multiplica o x por -1 (oque deixa o numero negativo)
+        fRight = new Vector3(1, 1, 1); // Determina que a variavel fRight tera um Vector3 de (1, 1, 1)
+        fLeft = new Vector3(-1, 1, 1); // Determina que a variavel fLeft tera um Vector3 de (-1, 1, 1)
     }
 
-    // Update is called once per frame
-    void Update()
+    void Update() // Executado a cada frame
     {
         Mov(); // Chama o void Mov
     }
 
-    void Mov() 
+    void Mov() // Void para Movimentação
     {
         // Movimentação
         float hspd = Input.GetAxis("Horizontal"); // Atribui o input horizontal a variavel hspd
@@ -32,13 +30,13 @@ public class MovPlayer : MonoBehaviour
         transform.position += mov * spd * Time.deltaTime; // Muda a posição do personagem de acordo com a variavel mov * spd * Time.deltaTime
 
         // Olhar Direita / Esquerda
-        if (hspd > 0); // Verifica se a variavel hspd é maior que 0
-        { 
-            transform.localScale = fRight; // Vira o player para a direita
-        }
-        if (hspd < 0) ; // Verifica se a variavel hspd é menor que 0
+        if (hspd > 0) // Verifica se a variavel hspd é maior que 0
         {
-            transform.localScale = fLeft; // Vira o player para a esquerda 
+            transform.localScale = fRight; // Transforma os valores da escala para a variavel fRight
+        }
+        if (hspd < 0) // Verifica se a variavel hspd é menor que 0
+        {
+            transform.localScale = fLeft; // Transforma os valores da escala para a variavel fLeft
         }
     }
 }
