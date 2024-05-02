@@ -13,8 +13,8 @@ public class MovPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fRight = transform.localScale; // Determina que o Vector3 é para escala
-        fLeft = transform.localScale; // Determina que o Vector3 é para escala
+        fRight = transform.localScale; // Determina que o Vector3 Ã© para escala
+        fLeft = transform.localScale; // Determina que o Vector3 Ã© para escala
         fLeft.x = fLeft.x * -1; // Multiplica o x por -1 (oque deixa o numero negativo)
     }
 
@@ -26,12 +26,16 @@ public class MovPlayer : MonoBehaviour
 
     void Mov() 
     {
-        // Movimentação
+        // MovimentaÃ§Ã£o
         float hspd = Input.GetAxis("Horizontal"); // Atribui o input horizontal a variavel hspd
         Vector3  mov = new Vector3 (hspd, 0, 0); // Atribui a variavel hspd no eixo X do Vector3 mov
-        transform.position += mov * spd * Time.deltaTime; // Muda a posição do personagem de acordo com a variavel mov * spd * Time.deltaTime
+        transform.position += mov * spd * Time.deltaTime; // Muda a posiÃ§Ã£o do personagem de acordo com a variavel mov * spd * Time.deltaTime
 
         // Olhar Direita / Esquerda
+        if (hspd > 0); // Verifica se a variavel hspd Ã© maior que 0
+        { 
+            
+        }
 
     }
 }
