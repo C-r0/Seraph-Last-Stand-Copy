@@ -7,29 +7,32 @@ using UnityEngine;
 public class Market : MonoBehaviour
 {
     // Variaveis
-    public GameObject mIcon;
+    public GameObject mIcon; // Variavel do icone
 
     void Start() // Executa ao iniciar o jogo
     {
-        
+        mIcon.SetActive(false); // Desativa o icone
     }
 
     void Update() // Executa a cada frame
     {
 
-    }   
+    }
 
 
 
-    void OnTriggerEnter(Collider other) // Void usado para checar se player esta perto do market
+    void OnTriggerEnter(Collider other) // Ativa quando o player entra em contato com o objeto
     {
-        if (other.CompareTag("Player")) // Compara se o objeto que colidiu é o Player
+        if (other.CompareTag("Player")) // Compara se o objeto que colidiu Ã© o Player
         {
             mIcon.SetActive(true); // Ativa o icone
         }
-        else // Se não estiver colidindo
+    }
+    void OnTriggerExit(Collider other) // Ativa quando o player sai do objeto
+    {
+        if (other.CompareTag("Player")) // Verifica se Ã© o player
         {
             mIcon.SetActive(false); // Desativa o icone
-        }
+        }   
     }
 }
