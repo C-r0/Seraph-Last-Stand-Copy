@@ -19,10 +19,9 @@ public class Market : MonoBehaviour
 
     }
 
-
-
     void OnTriggerEnter(Collider other) // Ativa quando o player entra em contato com o objeto
     {
+        Debug.Log("OnTriggerEnter");
         if (other.CompareTag("Player")) // Compara se o objeto que colidiu é o Player
         {
             mIcon.SetActive(true); // Ativa o icone
@@ -30,6 +29,7 @@ public class Market : MonoBehaviour
     }
     void OnTriggerExit(Collider other) // Ativa quando o player sai do objeto
     {
+        Debug.Log("OnTriggerExit");
         if (other.CompareTag("Player")) // Verifica se é o player
         {
             mIcon.SetActive(false); // Desativa o icone
